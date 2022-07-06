@@ -1,74 +1,50 @@
 // @hint all strings go with single quotes in ExtJS
-Ext.define("CodeReview.view.reviewOne.ReviewOneView", {
-  extend: "Ext.form.Panel",
-  xtype: "reviewOne",
+Ext.define('CodeReview.view.reviewOne.ReviewOneView', {
+  extend: 'Ext.form.Panel',
+  xtype: 'reviewOne',
 
   requires: [
-    "CodeReview.view.reviewOne.ReviewOneViewModel",
-    "CodeReview.view.reviewOne.ReviewOneViewController",
+    'CodeReview.view.reviewOne.ReviewOneViewModel',
+    'CodeReview.view.reviewOne.ReviewOneViewController'
   ],
 
-  controller: "reviewOne",
-  // @hint make it 1 line only and trailing comma, place it above controller
-  viewModel: {
-    type: "reviewOne",
-  },
+  viewModel: { type: 'reviewOne' },
+  controller: 'reviewOne',
 
-  // @hint make it 1 line only and trailing comma
-  bind: {
-    title: "{form.title}",
-  },
+  bind: { title: '{form.title}' },
 
-  layout: "vbox",
-  // @hint make it 1 line only and trailing comma
-  defaults: {
-    width: 600,
-  },
-  // @hint no empty line
-
+  layout: 'vbox',
+  defaults: { width: 600 },
   items: [
     {
-      xtype: "textfield",
+      xtype: 'textfield',
       bind: {
-        fieldLabel: "{form.fieldLabel}",
-        // @hint trailing comma
-        emptyText: "{form.defaultMessage}",
+        fieldLabel: '{form.fieldLabel}',
+        emptyText: '{form.defaultMessage}'
       },
       labelWidth: 150,
-      name: "whatYouThink",
-      margin: "15 0",
-      // @hint trailing comma
-      allowBlank: false,
-      // @hint trailing comma
-    },
+      name: 'whatYouThink',
+      margin: '15 0',
+      allowBlank: false
+    }
   ],
 
   buttons: [
     {
-      // @hint make bind only single line, while there is only a single item inside
-      bind: {
-        text: "{language.resetButtonText}",
-      },
+      bind: { text: '{language.resetButtonText}' },
       listeners: {
-        click: "onClickButtonReset",
-        // @hint trailing comma
-      },
+        click: 'onClickButtonReset'
+      }
     },
     {
-      // @hint make bind only single line, while there is only a single item inside
-      bind: {
-        text: "{language.defaultButtonText}",
-      },
+      bind: { text: '{language.defaultButtonText}' },
       formBind: true,
       disabled: true,
-      // @hint good: only listeners are going multi line, even when there is only a single listener inside
       listeners: {
-        click: "onClickButtonSubmit",
-        // @hint trailing comma
-      },
-      // @hint trailing comma
-    },
+        click: 'onClickButtonSubmit'
+      }
+    }
   ],
 
-  listeners: {},
+  listeners: {}
 });
