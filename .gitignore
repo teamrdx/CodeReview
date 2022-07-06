@@ -3,3 +3,6 @@ bootstrap.*
 classic.json*
 modern.json*
 .sencha
+
+# do not add sencha-errors
+sencha-error*.log

@@ -1,5 +1,11 @@
+// @hint remove all trailing commas
+//    indent is the same for all files => Good
+//    if you company uses 2 thats fine. A rule of thumb would be
+//    JS files 4 indentation
+//    CSS files 2 indentation
 Ext.define("CodeReview.view.reviewOne.ReviewOneViewModel", {
   extend: "Ext.app.ViewModel",
+  // @hint remove empty line before alias
 
   alias: "viewmodel.reviewOne",
 
