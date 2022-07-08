@@ -13,7 +13,7 @@ _So for our project, we need mostly `const` for constants like view and viewmode
 
 ### How `name` fields works
 
-`name` _ field is used to identify the textfeild used in the form panel. The value captured in that textfield is stored in that ´name´ field, which is used later for that data processing in the controller._
+_The `name` field is used to identify the textfeild used in the form panel. The value captured in that textfield is stored in that ´name´ field, which is used later for that data processing in the controller._
 
 ### Why `.show()` is dropped ?
 
