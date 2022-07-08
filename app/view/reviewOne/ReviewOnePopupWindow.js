@@ -4,13 +4,13 @@ Ext.define('Codereview.view.reviewOne.ReviewOnePopupWindow', {
 
   controller: 'reviewOnePopupWindow',
 
-  id: 'reviewOnePopupWindow',
   bind: { title: 'Hi {mentor}' },
 
   height: 200,
   width: 400,
 
   closeAction: 'destroy',
+  autoShow: true,
 
   layout: 'fit',
   items: {
