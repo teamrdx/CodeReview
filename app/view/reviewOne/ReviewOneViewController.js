@@ -1,40 +1,41 @@
 Ext.define('CodeReview.view.reviewOne.ReviewOneViewController', {
-    extend: 'Ext.app.ViewController',
-    alias: 'controller.reviewOne',
+  extend: 'Ext.app.ViewController',
+  alias: 'controller.reviewOne',
 
-    uses: ['Codereview.view.reviewOne.ReviewOnePopupWindow'],
+  uses: ['Codereview.view.reviewOne.ReviewOnePopupWindow'],
 
-    onClickButtonSubmit: function (btn) {
-        // Getting the ViewModel and storing it in the variable vm
-        const view = this.getView(),
-            // @hint use this.getViewModel in the controller
-            vm = this.getViewModel(),
-            // Getting the Values of the form
-            whatYouThink = view.getForm().getValues().whatYouThink;
+  onClickButtonSubmit: function (btn) {
+    // Getting the ViewModel and storing it in the variable vm
+    const view = this.getView();
 
-        console.log(whatYouThink);
+    // Getting the Values of the form
+    whatYouThink = view.getForm().getValues().whatYouThink;
 
-        // Setting the new values in the ViewModel
-        vm.set('language.defaultButtonText', 'Thanks');
+    console.log(whatYouThink);
 
-        // Setting new button Icon
-        btn.setIconCls('fa fa-thumbs-up');
+    // Setting the new values in the ViewModel
+    this.getViewModel().set('language.defaultButtonText', 'Thanks');
 
-        // Creating the popup with the parent viewmodel and displaying it in the view
-        Ext.create('Codereview.view.reviewOne.ReviewOnePopupWindow', {
-            viewModel: {parent: vm}
-        });
-    },
+    // Setting the new values in the ViewModel from the new textfield
+    this.getViewModel().set('form2.whatDoYouThink', whatYouThink);
 
-    onClickButtonReset: function (btn) {
-        // Getting the view and ViewModel
-        var view = this.getView(),
-            vm = view.getViewModel();
+    // Setting new button Icon
+    btn.setIconCls('fa fa-thumbs-up');
 
-        // Resetting the value entered in the form
-        view.getForm().reset();
+    // Creating the popup with the parent viewmodel and displaying it in the view
+    Ext.create('Codereview.view.reviewOne.ReviewOnePopupWindow', {
+      viewModel: { parent: this.getViewModel() }
+    });
+  },
 
-        // Resetting the old values in the ViewModel
-        vm.set('language.defaultButtonText', 'Click & Find');
-    }
+  onClickButtonReset: function (btn) {
+    // Getting the view and ViewModel
+    const view = this.getView();
+
+    // Resetting the value entered in the form
+    view.getForm().reset();
+
+    // Resetting the old values in the ViewModel
+    this.getViewModel().set('language.defaultButtonText', 'Click & Find');
+  }
 });
