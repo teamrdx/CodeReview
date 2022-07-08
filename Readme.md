@@ -2,11 +2,12 @@
 
 ### Difference between `var`, `let` & `const` in Javascript
 
-|var|let|const|
-|Globally scoped|Block scoped|Block scoped|
-|Can be updated and re-declared|Can be updated but not re-declared|Neither be updated nor be re-declared|
-|Initialized with `undefined`|Not initialized|Not Initialized|
-|Can be declared without being initialized|Can be declared without being initialized|Must be initialized during declaration|
+| var                                       | let                                       | const                                  |
+| ----------------------------------------- | ----------------------------------------- | -------------------------------------- |
+| Globally scoped                           | Block scoped                              | Block scoped                           |
+| Can be updated and re-declared            | Can be updated but not re-declared        | Neither be updated nor be re-declared  |
+| Initialized with `undefined`              | Not initialized                           | Not Initialized                        |
+| Can be declared without being initialized | Can be declared without being initialized | Must be initialized during declaration |
 
 _So for our project, we need mostly `const` for constants like view and viewmodels and let for other operational variables in our controller_
 
