@@ -17,7 +17,7 @@ _The `name` field is used to identify the textfeild used in the form panel. The 
 
 ### Why `.show()` is dropped ?
 
-_I think `.show()` is not required as Extjs automatically shows the Popup after creating it._
+_I think `.show()` is not required because `autoShow` is set to be `true` in that popup window._
 
 ### Why I set `value` in addition to `bind.value` ?
 
